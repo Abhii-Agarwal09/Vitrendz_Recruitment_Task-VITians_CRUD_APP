@@ -1,42 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const studentsController = require('../controllers/studentsController');
 
 // get request to get all students page
-router.get('/', (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: 'Welcome to all students page',
-    });
-});
+router.get('/', studentsController.getAllStudents);
 
 // put request to create new student
-router.put('/new', (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: 'New student created',
-    });
-});
+router.put('/new', studentsController.createStudent);
 
 // get request to see info of a particular student
-router.get('/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: `welcome to student information with id ${req.params.id}`,
-    });
-});
+router.get('/:id', studentsController.getStudentWithId);
 
 // put request to edit the data of a particular student
-router.put('/:id/edit', (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: `Student data with id ${req.params.id} edited`,
-    });
-});
+router.put('/:id/edit', studentsController.editStudent);
 
 // delete request to delete the particular student
-router.delete('/:id/delete', (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: `Student with id ${req.params.id} deletes`,
-    });
-});
+router.delete('/:id/delete', studentsController.deleteStudentWithId);
+
+module.exports = router;
