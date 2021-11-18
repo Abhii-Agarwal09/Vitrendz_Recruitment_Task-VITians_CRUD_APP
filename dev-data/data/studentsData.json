@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Abhishek Agarwal",
+        "registerNumber": "20BDS0070",
+        "dob": "20 September 2002",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.7
+    },
+    {
+        "name": "Samriddhi Tayal",
+        "registerNumber": "20BCE0071",
+        "dob": "30 October 2001",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.9
+    },
+    {
+        "name": "Jeet Kaushik",
+        "registerNumber": "20ECE0075",
+        "dob": "25 July 2002",
+        "department": "ECE",
+        "graduationYear": 2024,
+        "cgpa": 8.3
+    },
+    {
+        "name": "Nitish Kumar Bansal",
+        "registerNumber": "20BCE0999",
+        "dob": "20 January 2001",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.4
+    },
+    {
+        "name": "Sharain Kapoor",
+        "registerNumber": "20BDS0071",
+        "dob": "20 October 2002",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.5
+    },
+    {
+        "name": "Bhavya Chugh",
+        "registerNumber": "20BME0010",
+        "dob": "5 July 2001",
+        "department": "MEE",
+        "graduationYear": 2024,
+        "cgpa": 8.5
+    },
+    {
+        "name": "Sarthak Saxena",
+        "registerNumber": "20BCE0075",
+        "dob": "19 December 2003",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.7
+    },
+    {
+        "name": "Pratham Saini",
+        "registerNumber": "20BME0071",
+        "dob": "7 August 2002",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 9.0
+    },
+    {
+        "name": "Madhur Amit Mudgal",
+        "registerNumber": "20BM10170",
+        "dob": "11 March 2002",
+        "department": "BIO",
+        "graduationYear": 2024,
+        "cgpa": 8.7
+    },
+    {
+        "name": "Bhumika Tyagi",
+        "registerNumber": "20BCE0350",
+        "dob": "2 June 2002",
+        "department": "CSE",
+        "graduationYear": 2024,
+        "cgpa": 8.6
+    }
+]
