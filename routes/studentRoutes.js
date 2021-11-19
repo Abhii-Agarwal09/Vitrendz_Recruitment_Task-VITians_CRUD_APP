@@ -6,15 +6,13 @@ const studentsController = require('../controllers/studentsController');
 router.get('/', studentsController.getAllStudents);
 
 // put request to create new student
-router.put('/new', studentsController.createStudent);
+router.post('/new', studentsController.createStudent);
 
-// get request to see info of a particular student
-router.get('/:id', studentsController.getStudentWithId);
-
-// put request to edit the data of a particular student
-router.put('/:id/edit', studentsController.editStudent);
-
-// delete request to delete the particular student
-router.delete('/:id/delete', studentsController.deleteStudentWithId);
+// get student with id, edit student, delete student
+router
+    .route('/:id')
+    .get(studentsController.getStudentWithId)
+    .put(studentsController.editStudent)
+    .delete(studentsController.deleteStudentWithId);
 
 module.exports = router;
