@@ -1,0 +1,120 @@
+<%- layout('layout/boilerplate.ejs') %>
+
+<div class="container">
+    <form
+        action="/api/v1/students/<%= student._id %>?_method=PUT"
+        method="POST"
+        class="needs-validation mb-5 mt-5"
+        novalidate
+    >
+        <h1 class="mb-5 text-center">Edit Student Details</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >Name</span
+            >
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                value="<%= student.name %> "
+                name="student[name]"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >Registeration Number</span
+            >
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                value="<%= student.registerNumber %> "
+                name="student[registerNumber]"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >DOB</span
+            >
+            <input
+                type="date"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                name="student[dob]"
+                required
+                id="student-dob"
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >Department</span
+            >
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                value="<%= student.department %> "
+                name="student[department]"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >Graduation year</span
+            >
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                value="<%= student.graduationYear %> "
+                name="student[graduationYear]"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+                >CGPA</span
+            >
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                value="<%= student.cgpa %> "
+                name="student[cgpa]"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="btn-container text-center mb-5">
+            <a
+                href="/api/v1/students/<%= student._id %>"
+                class="btn btn-outline-primary"
+                >Cancel</a
+            >
+            <button class="btn btn-success m-1">Save</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const year = '<%- student.dob.getFullYear(); %>';
+    const month = '<%- student.dob.getMonth() + 1 %>';
+    const date = '<%- student.dob.getDate() %>';
+    const datePattern = `${year}-${month.length == 1 ? '0' : ''}${month}-${
+        date.length == 1 ? '0' : ''
+    }${date}`;
+    document.getElementById('student-dob').value = datePattern;
+</script>

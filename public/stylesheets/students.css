@@ -1,0 +1,13 @@
+.student-cards--container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.student-image {
+    border: 2px solid red;
+}
+
+.card span {
+    font-weight: 500;
+}

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Student = require('./models/studentModel');
 const students = require('./dev-data/data/studentsData.json');
+const { getStudentWithId } = require('./controllers/studentsController');
 
 dotenv.config({ path: './config.env' });
 
@@ -25,6 +26,7 @@ mongoose
 
 const importData = async () => {
     try {
+        await Student.deleteMany();
         await Student.create(students);
         console.log('Data successfully loaded');
     } catch (err) {

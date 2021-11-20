@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>All students page</h1>
-</body>
-</html>
+<%- layout('layout/boilerplate.ejs') %>
+<link rel="stylesheet" href="/stylesheets/students.css" />
+
+<div class="container mt-5 mb-5 d-flex flex-column">
+    <div class="mb-3">
+        <a href="/api/v1" class="m-3 btn btn-outline-primary">Back To Home</a>
+        <a href="/api/v1/students/new" class="m-3 btn btn-primary">Create new Student</a>
+    </div>
+    <div class="student-cards--container">
+        <% students.forEach(student => { %>
+        <div class="card m-3 text-center" style="width: 18rem">
+            <img src="/images/user-avatar.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title"><%= student.name %></h5>
+                <p class="card-text"><%= student.registerNumber %></p>
+                <a href="/api/v1/students/<%= student._id %>" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
