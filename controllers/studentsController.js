@@ -14,7 +14,7 @@ exports.renderCreateStudentForm = async (req, res) => {
 exports.createStudent = async (req, res) => {
     const student = new Student(req.body.student);
     await student.save();
-    res.redirect(`/api/v1/students/${student._id}`);
+    res.redirect(`/students/${student._id}`);
 };
 
 // get student by id
@@ -35,12 +35,12 @@ exports.renderEditStudentForm = async (req, res) => {
 exports.editStudent = async (req, res) => {
     const { id } = req.params;
     const student = await Student.findByIdAndUpdate(id, req.body.student);
-    res.redirect(`/api/v1/students/${student._id}`);
+    res.redirect(`/students/${student._id}`);
 };
 
 // delete student by ID
 exports.deleteStudentWithId = async (req, res) => {
     const { id } = req.params;
     await Student.findByIdAndDelete(id);
-    res.redirect('/api/v1/students');
+    res.redirect('/students');
 };

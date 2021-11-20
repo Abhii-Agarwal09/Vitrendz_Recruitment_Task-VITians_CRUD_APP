@@ -15,10 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 // get request to get the home page
-app.get('/api/v1', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.use('/api/v1/students', studentsRouter);
+app.use('/students', studentsRouter);
 
 module.exports = app;

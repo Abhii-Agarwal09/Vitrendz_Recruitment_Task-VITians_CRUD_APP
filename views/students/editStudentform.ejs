@@ -2,7 +2,7 @@
 
 <div class="container">
     <form
-        action="/api/v1/students/<%= student._id %>?_method=PUT"
+        action="/students/<%= student._id %>?_method=PUT"
         method="POST"
         class="needs-validation mb-5 mt-5"
         novalidate
@@ -100,7 +100,7 @@
         </div>
         <div class="btn-container text-center mb-5">
             <a
-                href="/api/v1/students/<%= student._id %>"
+                href="/students/<%= student._id %>"
                 class="btn btn-outline-primary"
                 >Cancel</a
             >
