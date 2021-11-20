@@ -17,10 +17,6 @@ app.use(methodOverride('_method'));
 // get request to get the home page
 app.get('/api/v1', (req, res) => {
     res.render('home');
-    // res.status(200).json({
-    //     success: true,
-    //     data: 'Welcome to home page',
-    // });
 });
 
 app.use('/api/v1/students', studentsRouter);

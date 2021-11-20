@@ -8,12 +8,6 @@ exports.getAllStudents = async (req, res) => {
 
 // create new student
 exports.renderCreateStudentForm = async (req, res) => {
-    // const student = new Student(req.body);
-    // await student.save();
-    // res.status(200).json({
-    //     success: true,
-    //     data: 'New student created',
-    // });
     res.render('students/newStudent');
 };
 
@@ -27,7 +21,6 @@ exports.createStudent = async (req, res) => {
 exports.getStudentWithId = async (req, res) => {
     const { id } = req.params;
     const student = await Student.findById(id);
-    // console.log(student);
     res.render('students/viewStudentDetails', { student });
 };
 
@@ -35,7 +28,6 @@ exports.getStudentWithId = async (req, res) => {
 exports.renderEditStudentForm = async (req, res) => {
     const { id } = req.params;
     const student = await Student.findById(id);
-    // console.log(student);
     res.render('students/editStudentform', { student });
 };
 
@@ -44,11 +36,6 @@ exports.editStudent = async (req, res) => {
     const { id } = req.params;
     const student = await Student.findByIdAndUpdate(id, req.body.student);
     res.redirect(`/api/v1/students/${student._id}`);
-    // res.status(200).json({
-    //     success: true,
-    //     message: `Student data with id ${req.params.id} edited`,
-    //     // data: student,
-    // });
 };
 
 // delete student by ID
